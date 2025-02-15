@@ -13,6 +13,9 @@ CustomerTrack is a real-time data pipeline designed to extract and manage custom
 
 * Data Versioning & Historical Tracking: Tracks and stores multiple versions of customer records, preserving historical changes for accurate reporting and analysis.
 
+
+![Diagram](https://github.com/sahil118/SCD-Pipeline/blob/main/Screenshot%202025-02-15%20193843.png)
+
 ## Data Creation Module
 
 * Custom Python Script with Faker Library: Utilized a custom Python script, powered by the Faker library, to generate synthetic customer data, including personal details like name, city, state, country, and email.
@@ -234,10 +237,30 @@ CREATE OR REPLACE VIEW v_customer_changing_data AS (
 
 ```
 ### Apache nifi Data flow :
-![Apache nifi Data flow](https://github.com/sahil118/flipkart-end-to-end-data-engineering-project/blob/main/flipkart-project-architecture.png)
+![Apache nifi Data flow](https://github.com/sahil118/SCD-Pipeline/blob/main/Screenshot%202025-02-14%20204846.png)
 
 ### SCD-1 
-![SCD-1](https://github.com/sahil118/flipkart-end-to-end-data-engineering-project/blob/main/flipkart-project-architecture.png)
+![SCD-1](https://github.com/sahil118/SCD-Pipeline/blob/main/Screenshot%202025-02-15%20165117.png)
 
 ### SCD-2
-![SCD-2](https://github.com/sahil118/flipkart-end-to-end-data-engineering-project/blob/main/flipkart-project-architecture.png)
+![SCD-2](https://github.com/sahil118/SCD-Pipeline/blob/main/Screenshot%202025-02-15%20165038.png)
+## Use Cases:
+
+**Customer Data Management**:
+
+This pipeline is ideal for businesses that need to track customer data over time, maintaining both current and historical records for customer profiles, contact details, and other relevant data.
+
+**Data Warehousing and Analytics**:
+
+The solution allows organizations to store large volumes of customer data in a Snowflake data warehouse, making it easier to perform analytics on both the current and historical state of customer information.
+
+**Real-Time Data Ingestion and Processing**:
+
+For applications that require real-time updates on customer data, this system enables instant ingestion, processing, and transformation of data, providing up-to-date information for business decisions.
+
+**Historical Data Retention**:
+
+The SCD Type 2 implementation ensures that changes in customer data are recorded over time, providing the ability to track the entire lifecycle of a customer's information and maintain a complete data history.
+
+## Conclusion:
+This project successfully implements an automated data pipeline to manage customer data, ensuring real-time ingestion, storage, and historical tracking through the use of industry-standard technologies such as Apache NiFi, Amazon S3, Snowflake, and Snowpipe. The system effectively addresses the challenge of tracking changes in customer data by utilizing Slowly Changing Dimensions (SCD) Type 1 and Type 2 methodologies, allowing both current and historical data to be maintained in an efficient and scalable manner. With automated tasks and real-time data monitoring, this project provides a seamless solution for handling and processing dynamic customer information.
